@@ -14,6 +14,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	aea679f2af2addd5aa5c47bccf76f7e7
 URL:		http://pear.php.net/package/HTML_AJAX/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	sed >= 4.0
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,7 +41,7 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 cp -a %{_pearname}-%{version}/{AJAX,*.php} $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
 cp -a %{_pearname}-%{version}/js $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/AJAX/js
 
-sed -i -e 's#@data-dir@#%{php_pear_dir}#g' -e "s#'HTML_AJAX'#'HTML'.DIRECTORY_SEPARATOR.'AJAX'#g" \
+%{__sed} -i -e 's#@data-dir@#%{php_pear_dir}#g' -e "s#'HTML_AJAX'#'HTML'.DIRECTORY_SEPARATOR.'AJAX'#g" \
 	$RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/AJAX/Server.php
 
 %clean
