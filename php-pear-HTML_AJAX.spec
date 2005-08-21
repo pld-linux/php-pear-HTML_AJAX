@@ -2,16 +2,17 @@
 %define		_class		HTML
 %define		_subclass	AJAX
 %define		_status		stable
-
 %define		_pearname	%{_class}_%{_subclass}
+
 Summary:	%{_pearname} - PHP and JavaScript library for AJAX
+Summary(pl):	%{_pearname} - biblioteka PHP i JavaScript dla AJAX
 Name:		php-pear-%{_pearname}
-Version:	0.1.3
+Version:	0.1.4
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	aea679f2af2addd5aa5c47bccf76f7e7
+# Source0-md5:	a44db3886d9a05f72b27befcb136962e
 URL:		http://pear.php.net/package/HTML_AJAX/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	sed >= 4.0
