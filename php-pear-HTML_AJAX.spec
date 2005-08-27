@@ -23,14 +23,26 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Provides PHP and JavaScript libraries for performing AJAX
 (Communication from JavaScript to your browser without reloading the
-page)
+page).
 
 Offers OO proxies in JavaScript of registered PHP or proxyless
-operation Serialization of data sent between PHP and JavaScript is
+operation. Serialization of data sent between PHP and JavaScript is
 provided by a driver model, currently JSON and Null encodings are
-provided
+provided.
 
 In PEAR status of this package is: %{_status}.
+
+%description -l pl
+Ta klasa dostarcza biblioteki PHP i JavaScript do przeprowadzania AJAX
+(komunikacji z JavaScriptu do przegl±darki bez prze³adowywania
+strony).
+
+Oferuje zorientowane obiektowo proxy w JavaScripcie z zarejestrowanym
+PHP lub operacje bez proxy. Serializacja danych przesy³anych pomiêdzy
+PHP i JavaScriptem jest zapewniana przez model sterowników, aktualnie
+dostarczone s± kodowania JSON i Null.
+
+Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
@@ -39,7 +51,7 @@ In PEAR status of this package is: %{_status}.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
-cp -a %{_pearname}-%{version}/{AJAX,*.php} $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
+cp -a %{_pearname}-%{version}/{AJAX,*.php} $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 cp -a %{_pearname}-%{version}/js $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/AJAX/js
 
 %{__sed} -i -e 's#@data-dir@#%{php_pear_dir}#g' -e "s#'HTML_AJAX'#'HTML'.DIRECTORY_SEPARATOR.'AJAX'#g" \
