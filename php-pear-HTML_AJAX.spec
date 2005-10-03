@@ -8,13 +8,13 @@ Summary:	%{_pearname} - PHP and JavaScript library for AJAX
 Summary(pl):	%{_pearname} - biblioteka PHP i JavaScript dla AJAX
 Name:		php-pear-%{_pearname}
 Version:	0.1.4
-Release:	1
+Release:	1.1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	a44db3886d9a05f72b27befcb136962e
 URL:		http://pear.php.net/package/HTML_AJAX/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	sed >= 4.0
 Requires:	php-pear
 BuildArch:	noarch
@@ -45,22 +45,21 @@ dostarczone s± kodowania JSON i Null.
 Ta klasa ma w PEAR status: %{_status}.
 
 %prep
-%setup -q -c
+%pear_package_setup
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
-
-cp -a %{_pearname}-%{version}/{AJAX,*.php} $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
-cp -a %{_pearname}-%{version}/js $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/AJAX/js
-
-%{__sed} -i -e 's#@data-dir@#%{php_pear_dir}#g' -e "s#'HTML_AJAX'#'HTML'.DIRECTORY_SEPARATOR.'AJAX'#g" \
-	$RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/AJAX/Server.php
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/examples/*
+%doc install.log
+%doc docs/%{_pearname}/{docs/*,examples}
+%{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*
+
+%{php_pear_dir}/data/%{_pearname}
