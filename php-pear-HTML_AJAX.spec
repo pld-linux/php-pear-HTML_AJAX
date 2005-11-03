@@ -1,7 +1,7 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		HTML
 %define		_subclass	AJAX
-%define		_status		stable
+%define		_status		alpha
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - PHP and JavaScript library for AJAX
@@ -15,7 +15,9 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	a44db3886d9a05f72b27befcb136962e
 URL:		http://pear.php.net/package/HTML_AJAX/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-12
+Requires:	php-common >= 3:4.3.0
 Requires:	php-pear
+Requires:	php-pear-PEAR >= 1:1.3.5
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
