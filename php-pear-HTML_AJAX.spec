@@ -14,6 +14,7 @@ Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	a44db3886d9a05f72b27befcb136962e
 URL:		http://pear.php.net/package/HTML_AJAX/
+BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-12
 Requires:	php-common >= 3:4.3.0
 Requires:	php-pear
