@@ -9,7 +9,7 @@ Summary(pl):	%{_pearname} - biblioteka PHP i JavaScript dla AJAX
 Name:		php-pear-%{_pearname}
 Version:	0.5.0
 Release:	1
-License:	PHP 2.02
+License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	fc41fcb19a0ee67af07ee99654310627
