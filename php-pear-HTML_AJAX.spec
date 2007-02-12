@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - PHP and JavaScript library for AJAX
-Summary(pl):	%{_pearname} - biblioteka PHP i JavaScript dla AJAX
+Summary(pl.UTF-8):   %{_pearname} - biblioteka PHP i JavaScript dla AJAX
 Name:		php-pear-%{_pearname}
 Version:	0.5.0
 Release:	1
@@ -35,15 +35,15 @@ provided.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
+%description -l pl.UTF-8
 Ta klasa dostarcza biblioteki PHP i JavaScript do przeprowadzania AJAX
-(komunikacji z JavaScriptu do przegl±darki bez prze³adowywania
+(komunikacji z JavaScriptu do przeglÄ…darki bez przeÅ‚adowywania
 strony).
 
 Oferuje zorientowane obiektowo proxy w JavaScripcie z zarejestrowanym
-PHP lub operacje bez proxy. Serializacja danych przesy³anych pomiêdzy
-PHP i JavaScriptem jest zapewniana przez model sterowników, aktualnie
-dostarczone s± kodowania JSON i Null.
+PHP lub operacje bez proxy. Serializacja danych przesyÅ‚anych pomiÄ™dzy
+PHP i JavaScriptem jest zapewniana przez model sterownikÃ³w, aktualnie
+dostarczone sÄ… kodowania JSON i Null.
 
 Ta klasa ma w PEAR status: %{_status}.
 
