@@ -7,12 +7,12 @@
 Summary:	%{_pearname} - PHP and JavaScript library for AJAX
 Summary(pl.UTF-8):	%{_pearname} - biblioteka PHP i JavaScript dla AJAX
 Name:		php-pear-%{_pearname}
-Version:	0.5.0
+Version:	0.5.2
 Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	fc41fcb19a0ee67af07ee99654310627
+# Source0-md5:	7f224ccaaa7fc7999eb452b2a1b31085
 URL:		http://pear.php.net/package/HTML_AJAX/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-12
@@ -47,6 +47,20 @@ dostarczone są kodowania JSON i Null.
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
+Group:		Development/Languages/PHP
+Requires:	%{name} = %{version}-%{release}
+AutoReq:	no
+AutoProv:	no
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl.UTF-8
+Testy dla PEAR::%{_pearname}.
+
 %prep
 %pear_package_setup
 
@@ -64,5 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/%{_pearname}/{docs/*,examples}
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*
-
 %{php_pear_dir}/data/%{_pearname}
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/%{_pearname}
