@@ -1,6 +1,5 @@
 %define		_status		beta
 %define		_pearname	HTML_AJAX
-%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - PHP and JavaScript library for AJAX
 Summary(pl.UTF-8):	%{_pearname} - biblioteka PHP i JavaScript dla AJAX
 Name:		php-pear-%{_pearname}
